@@ -1,0 +1,31 @@
+# dump build stage
+FROM postgres:11-alpine as dumper
+
+COPY databases/question.sql /docker-entrypoint-initdb.d/
+COPY databases/Auth.sql /docker-entrypoint-initdb.d/
+COPY databases/model.sql /docker-entrypoint-initdb.d/
+COPY databases/product.sql /docker-entrypoint-initdb.d/
+
+COPY permissions/perm_question.sql /docker-entrypoint-initdb.d/
+COPY permissions/perm_Auth.sql /docker-entrypoint-initdb.d/
+COPY permissions/perm_model.sql /docker-entrypoint-initdb.d/
+#COPY permissions/perm_product.sql /docker-entrypoint-initdb.d/
+
+COPY data/data_Auth.sql /docker-entrypoint-initdb.d/
+#COPY data/data_model.sql /docker-entrypoint-initdb.d/
+#COPY data/data_product.sql /docker-entrypoint-initdb.d/
+#COPY data/data_question.sql /docker-entrypoint-initdb.d/
+
+
+RUN ["sed", "-i", "s/exec \"$@\"/echo \"skipping...\"/", "/usr/local/bin/docker-entrypoint.sh"]
+
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=postgres
+ENV PGDATA=/data
+
+RUN ["/usr/local/bin/docker-entrypoint.sh", "postgres"]
+
+# final build stage
+FROM postgres:11-alpine
+
+COPY --from=dumper /data $PGDATA
