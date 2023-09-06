@@ -109,17 +109,27 @@ GRANT SELECT ON public.materialtypes TO usr_product;
 
 --LINEA DE PRODUCTO:
 
-INSERT INTO public.lines(id,name,alias,orderoflist,is_active,created_at) VALUES
-     (1,'Evaluación Externa','EV',1,true,CURRENT_TIMESTAMP),
-     (2,'Formación Para Estudiante','FE',2,true,CURRENT_TIMESTAMP),
-     (3,'Actualización Docente','AD',3,true,CURRENT_TIMESTAMP),
-     (4,'Editorial','ED',4,true,CURRENT_TIMESTAMP),
-     (5,'Ceinfes Tech','CT',5,true,CURRENT_TIMESTAMP);
+INSERT INTO public.lines VALUES (1, 'Evaluación Externa', 'EV', 1, true, '2023-07-28 21:01:41.692262');
+INSERT INTO public.lines VALUES (2, 'Formación Para Estudiante', 'FE', 2, true, '2023-07-28 21:01:41.692262');
+INSERT INTO public.lines VALUES (3, 'Actualización Docente', 'AD', 3, true, '2023-07-28 21:01:41.692262');
+INSERT INTO public.lines VALUES (4, 'Editorial', 'ED', 4, true, '2023-07-28 21:01:41.692262');
+INSERT INTO public.lines VALUES (5, 'Ceinfes Tech', 'CT', 5, true, '2023-07-28 21:01:41.692262');
 
 
 ----CATEGORIAS:
 
-INSERT INTO public.categories (id,"name",line_id,alias,orderoflist,is_active,created_at) VALUES
+INSERT INTO public.categories VALUES (1, 'Martes de Prueba', 1, 'MPRUBA', 1, true, '2023-07-28 21:05:12.781031');
+INSERT INTO public.categories VALUES (2, 'Martes De Prueba Gold', 1, 'MPG', 1, true, '2023-07-28 21:05:12.781031');
+INSERT INTO public.categories VALUES (3, 'Simulacros 10º', 1, 'SIMG10', 3, true, '2023-07-28 21:05:55.309319');
+INSERT INTO public.categories VALUES (4, 'Simulacros 11º', 1, 'SIMG11', 2, true, '2023-07-28 21:05:55.309319');
+INSERT INTO public.categories VALUES (5, 'Simulacro UNAL', 1, 'SIMUNAL', 4, true, '2023-07-28 21:05:55.309319');
+INSERT INTO public.categories VALUES (6, 'Simulacro Lectura Crítica', 1, 'SIMLC', 5, true, '2023-07-28 21:05:55.309319');
+INSERT INTO public.categories VALUES (7, 'Ciudadanas', 1, 'CIU', 8, true, '2023-07-28 21:05:55.309319');
+INSERT INTO public.categories VALUES (8, 'Mi Primer Martes', 1, 'MPMP', 9, true, '2023-07-28 21:05:55.309319');
+INSERT INTO public.categories VALUES (9, 'Saberes', 1, 'SABERES', 7, true, '2023-07-28 21:05:55.309319');
+INSERT INTO public.categories VALUES (10, 'Pensar', 1, 'PEN', 6, true, '2023-07-28 21:05:55.309319');
+
+/*INSERT INTO public.categories (id,"name",line_id,alias,orderoflist,is_active,created_at) VALUES
      (1,'Simulacro 11º',1,'SIMG11',2,true,CURRENT_TIMESTAMP),
      (2,'Libros Grado 11',4,'LIBG11',10,true,CURRENT_TIMESTAMP),
      (6,'Cartillas PreUNAL',4,'CARPREU',17,true,CURRENT_TIMESTAMP),
@@ -210,12 +220,54 @@ INSERT INTO public.categories (id,"name",line_id,alias,orderoflist,is_active,cre
      (99,'Talleres Estud. Virtual',5,'TLLESTVIR',53,true,CURRENT_TIMESTAMP);
 INSERT INTO public.categories (id,"name",line_id,alias,orderoflist,is_active,created_at) VALUES
      (100,'Paquete Diamond Virtual',5,'PDIAMV',54,true,CURRENT_TIMESTAMP),
-     (101,'Libros Método 84h',4,'LIBMG1',49,true,CURRENT_TIMESTAMP);
+     (101,'Libros Método 84h',4,'LIBMG1',49,true,CURRENT_TIMESTAMP);*/
 
 
 ------TIPO DE MATERIAL
 
-INSERT INTO public.materialtypes(id,name,category_id,cycle,orderoflist,is_active,alias,created_at) VALUES (1,'Simulacro D9',1,1,4,false,'NULL',CURRENT_TIMESTAMP);
+INSERT INTO public.materialtypes VALUES (1, 'Prueba No 1', 'MP1', 1, 1, 1, true, '2023-07-28 21:15:36.02741');
+INSERT INTO public.materialtypes VALUES (2, 'Prueba No 2', 'MP2', 1, 1, 2, true, '2023-07-28 21:15:36.122771');
+INSERT INTO public.materialtypes VALUES (3, 'Prueba No 3', 'MP3', 1, 1, 3, true, '2023-07-28 21:15:36.22788');
+INSERT INTO public.materialtypes VALUES (4, 'Prueba No 4', 'MP4', 1, 1, 4, true, '2023-07-28 21:15:36.324677');
+INSERT INTO public.materialtypes VALUES (5, 'Prueba No 5', 'MP5', 1, 1, 5, true, '2023-07-28 21:15:36.425188');
+INSERT INTO public.materialtypes VALUES (6, 'Prueba No 6', 'MP6', 1, 2, 6, true, '2023-07-28 21:15:36.513776');
+INSERT INTO public.materialtypes VALUES (7, 'Prueba No 7', 'MP7', 1, 2, 7, true, '2023-07-28 21:15:36.607807');
+INSERT INTO public.materialtypes VALUES (8, 'Prueba No 8', 'MP8', 1, 2, 8, true, '2023-07-28 21:15:36.69438');
+INSERT INTO public.materialtypes VALUES (9, 'Prueba No 9', 'MP9', 1, 2, 9, true, '2023-07-28 21:15:36.787518');
+INSERT INTO public.materialtypes VALUES (10, 'Prueba No 10', 'MP10', 1, 2, 10, true, '2023-07-28 21:15:36.868985');
+INSERT INTO public.materialtypes VALUES (11, 'Prueba No 11', 'MP11', 1, 3, 11, true, '2023-07-28 21:15:36.960899');
+INSERT INTO public.materialtypes VALUES (12, 'Prueba No 12', 'MP12', 1, 3, 12, true, '2023-07-28 21:15:37.058251');
+INSERT INTO public.materialtypes VALUES (13, 'Prueba No 13', 'MP13', 1, 3, 13, true, '2023-07-28 21:15:37.140162');
+INSERT INTO public.materialtypes VALUES (14, 'Prueba No 14', 'MP14', 1, 3, 14, true, '2023-07-28 21:15:37.241904');
+INSERT INTO public.materialtypes VALUES (15, 'Prueba No 15', 'MP15', 1, 3, 15, true, '2023-07-28 21:15:37.341787');
+INSERT INTO public.materialtypes VALUES (16, 'Prueba No 16', 'MP16', 1, 4, 16, true, '2023-07-28 21:15:37.431885');
+INSERT INTO public.materialtypes VALUES (17, 'Prueba No 17', 'MP17', 1, 4, 17, true, '2023-07-28 21:15:37.518459');
+INSERT INTO public.materialtypes VALUES (18, 'Prueba No 18', 'MP18', 1, 4, 18, true, '2023-07-28 21:15:37.617879');
+INSERT INTO public.materialtypes VALUES (19, 'Prueba No 19', 'MP19', 1, 4, 19, true, '2023-07-28 21:15:37.718746');
+INSERT INTO public.materialtypes VALUES (20, 'Prueba No 20', 'MP20', 1, 4, 20, true, '2023-07-28 21:15:37.813791');
+INSERT INTO public.materialtypes VALUES (21, 'Prueba No 1', 'MPG1', 2, 1, 1, true, '2023-07-28 21:16:54.509636');
+INSERT INTO public.materialtypes VALUES (22, 'Prueba No 2', 'MPG2', 2, 1, 2, true, '2023-07-28 21:16:54.593501');
+INSERT INTO public.materialtypes VALUES (23, 'Prueba No 3', 'MPG3', 2, 1, 3, true, '2023-07-28 21:16:54.683584');
+INSERT INTO public.materialtypes VALUES (24, 'Prueba No 4', 'MPG4', 2, 1, 4, true, '2023-07-28 21:16:54.813847');
+INSERT INTO public.materialtypes VALUES (25, 'Prueba No 5', 'MPG5', 2, 1, 5, true, '2023-07-28 21:16:54.919666');
+INSERT INTO public.materialtypes VALUES (26, 'Prueba No 6', 'MPG6', 2, 2, 6, true, '2023-07-28 21:16:55.043526');
+INSERT INTO public.materialtypes VALUES (27, 'Prueba No 7', 'MPG7', 2, 2, 7, true, '2023-07-28 21:16:55.119867');
+INSERT INTO public.materialtypes VALUES (28, 'Prueba No 8', 'MPG8', 2, 2, 8, true, '2023-07-28 21:16:55.202103');
+INSERT INTO public.materialtypes VALUES (29, 'Prueba No 9', 'MPG9', 2, 2, 9, true, '2023-07-28 21:16:55.314389');
+INSERT INTO public.materialtypes VALUES (30, 'Prueba No 10', 'MPG10', 2, 2, 10, true, '2023-07-28 21:16:55.409698');
+INSERT INTO public.materialtypes VALUES (31, 'Prueba No 11', 'MPG11', 2, 3, 11, true, '2023-07-28 21:16:55.503424');
+INSERT INTO public.materialtypes VALUES (32, 'Prueba No 12', 'MPG12', 2, 3, 12, true, '2023-07-28 21:16:55.593519');
+INSERT INTO public.materialtypes VALUES (33, 'Prueba No 13', 'MPG13', 2, 3, 13, true, '2023-07-28 21:16:55.705257');
+INSERT INTO public.materialtypes VALUES (34, 'Prueba No 14', 'MPG14', 2, 3, 14, true, '2023-07-28 21:16:55.795316');
+INSERT INTO public.materialtypes VALUES (35, 'Prueba No 15', 'MPG15', 2, 3, 15, true, '2023-07-28 21:16:55.885002');
+INSERT INTO public.materialtypes VALUES (36, 'Prueba No 16', 'MPG16', 2, 4, 16, true, '2023-07-28 21:16:55.955135');
+INSERT INTO public.materialtypes VALUES (37, 'Prueba No 17', 'MPG17', 2, 4, 17, true, '2023-07-28 21:16:56.04237');
+INSERT INTO public.materialtypes VALUES (38, 'Prueba No 18', 'MPG18', 2, 4, 18, true, '2023-07-28 21:16:56.12886');
+INSERT INTO public.materialtypes VALUES (39, 'Prueba No 19', 'MPG19', 2, 4, 19, true, '2023-07-28 21:16:56.20733');
+INSERT INTO public.materialtypes VALUES (40, 'Prueba No 20', 'MPG20', 2, 4, 20, true, '2023-07-28 21:16:56.287173');
+
+
+/*INSERT INTO public.materialtypes(id,name,category_id,cycle,orderoflist,is_active,alias,created_at) VALUES (1,'Simulacro D9',1,1,4,false,'NULL',CURRENT_TIMESTAMP);
 INSERT INTO public.materialtypes(id,name,category_id,cycle,orderoflist,is_active,alias,created_at) VALUES (2,'Simulacro S9',1,1,5,false,'NULL',CURRENT_TIMESTAMP);
 INSERT INTO public.materialtypes(id,name,category_id,cycle,orderoflist,is_active,alias,created_at) VALUES (3,'Simulacro F9',1,1,6,false,'NULL',CURRENT_TIMESTAMP);
 INSERT INTO public.materialtypes(id,name,category_id,cycle,orderoflist,is_active,alias,created_at) VALUES (4,'Simulacro SM-10',70,1,10,false,'NULL',CURRENT_TIMESTAMP);
@@ -607,4 +659,6 @@ INSERT INTO public.materialtypes(id,name,category_id,cycle,orderoflist,is_active
 INSERT INTO public.materialtypes(id,name,category_id,cycle,orderoflist,is_active,alias,created_at) VALUES (390,'SB - Aplicación 3',16,1,15,true,'SB3',CURRENT_TIMESTAMP);
 INSERT INTO public.materialtypes(id,name,category_id,cycle,orderoflist,is_active,alias,created_at) VALUES (391,'SABERes11 104-23',2,1,1,true,'LSB11_23',CURRENT_TIMESTAMP);
 INSERT INTO public.materialtypes(id,name,category_id,cycle,orderoflist,is_active,alias,created_at) VALUES (392,'Horas Clases Pre-Unal (Horas Clases Pre-Unal)',67,1,1,true,'HCPU',CURRENT_TIMESTAMP);
+*/
+
 
